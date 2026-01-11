@@ -1,0 +1,221 @@
+
+body {
+    margin: 0;
+    font-family: "Georgia", "Times New Roman", serif;
+    background: linear-gradient(120deg, #f4f1ea, #e9e4d9);
+    color: #3a2f28;
+}
+
+#header-nav {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 24px;
+    background-color: #3a2f28;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+#header-nav input[type="text"] {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    width: 180px;
+    font-size: 14px;
+}
+
+#find_btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #c89b6d;
+    color: #3a2f28;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#find_btn:hover {
+    background-color: #b4885f;
+}
+
+#header-nav a {
+    margin-left: auto;
+    text-decoration: none;
+    color: #f4f1ea;
+    font-weight: 500;
+}
+
+#header-nav a + a {
+    margin-left: 16px;
+}
+
+#header-nav a:hover {
+    text-decoration: underline;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(58, 47, 40, 0.55);
+    backdrop-filter: blur(2px);
+    z-index: 9000;
+    display: none;
+}
+
+.modal-overlay.active {
+    display: block;
+}
+#add-form,
+#add-author-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+
+    width: 360px;
+    padding: 22px 24px;
+    background: #fffaf3;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s ease;
+
+    z-index: 9100;
+}
+
+#add-form.active,
+#add-author-form.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.inactive {
+    display: none;
+}
+#add-form input,
+#add-form select,
+#add-author-form input {
+    padding: 9px 10px;
+    border-radius: 6px;
+    border: 1px solid #d6c8b8;
+    font-size: 14px;
+}
+
+#add-form input:focus,
+#add-author-form input:focus,
+#add-form select:focus {
+    outline: none;
+    border-color: #c89b6d;
+    box-shadow: 0 0 0 2px rgba(200,155,109,0.2);
+}
+#form-btn,
+#author-form-btn {
+    margin-top: 8px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #c89b6d, #b4885f);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#add-form input[type="button"]:first-child,
+#add-author-form input[type="button"]:first-child {
+    background: transparent;
+    border: none;
+    color: #8a6f55;
+    cursor: pointer;
+    align-self: flex-end;
+}
+.section {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 18px 20px 22px;
+
+    background: #fffaf3;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.section-toggle {
+    cursor: pointer;
+    user-select: none;
+    font-size: 22px;
+    color: #3a2f28;
+    margin-bottom: 10px;
+}
+
+.section-toggle::after {
+    content: "▸";
+    margin-left: 8px;
+    transition: transform 0.2s;
+}
+
+.section.open .section-toggle::after {
+    transform: rotate(90deg);
+}
+
+.section-content {
+    display: none;
+}
+
+.section.open .section-content {
+    display: block;
+}
+.order-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 14px;
+    background: #fffaf3;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.order-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.book-card button {
+    background: linear-gradient(135deg, #8fb3a2, #6f9c88);
+    color: #fff;
+}
+.btn-primary,
+button,
+input[type="button"] {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #c89b6d, #b4885f);
+    color: #3a2f28;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary:hover,
+button:hover,
+input[type="button"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+.btn-primary:active,
+button:active,
+input[type="button"]:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}

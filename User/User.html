@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Store User</title>
+</head>
+<body>
+    <div class="modal-overlay" onclick="close_all_forms()"></div>
+    <div id="header-nav">
+        <input id= "book_name_input" type="text" placeholder="Book name"/>
+        <input id= "find_btn" type="button" value="Find"/>
+        <a href="../Books/Books.html">Books</a>
+        <a href="../Login/Login.html" id="login-text" >Login</a>
+    </div>
+    <input type="button" onclick="open_author_form(false)" value="Add new author"/>
+
+    <div id="add-author-form" class="inactive">
+
+        <input type="button" onclick="close_author_form()" value="Close" />
+
+        <input type="text" id="author-secondname" placeholder="Last name" />
+        <input type="text" id="author-firstname" placeholder="First name" />
+        <input type="date" id="author-birthdate" placeholder="Birth date" />
+
+        <input onclick="author_form_btn_click()" type="button" value="Add" id="author-form-btn"/>
+
+    </div>
+
+    <input type="button" onclick="open_form(false)" value="Add new book"/>
+    <div id="add-form" class="inactive">
+
+        <input onclick="close_form()" type="Button" value="Close" />
+        <input type="text" id= "title" placeholder="Title" />
+        <input type="text" id= "synapsis" placeholder="Synapsis" />
+        <input type="text" id= "publishDate" placeholder="PublishDate" />
+        <input type="text" id= "cost" placeholder="Cost" />
+        <input type="text" id= "count" placeholder="Count" />
+        <input type="text" id= "img" placeholder="Img" />
+        <select id="authors" size=1>
+        </select>
+        <input onclick="form_btn_click()" type="button" value="Add" id="form-btn"/>
+
+    </div>
+    <div id="purchases-list" class="section">
+        <h1 class="section-toggle" onclick="toggle_section('purchases-list')">Purchases</h1>
+    </div>
+    <div id="orders-list" class="section">
+        <h1 class="section-toggle" onclick="toggle_section('orders-list')">Orders</h1>
+    </div>
+    <div id="book-list" class="section">
+        <h1 class="section-toggle" onclick="toggle_section('book-list')">Items</h1>
+    </div>
+    
+</body>
+</html>
+<script src="./script.js"></script>
