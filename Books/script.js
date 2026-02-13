@@ -23,7 +23,7 @@ async function check_if_logged(){
     }
 }
 async function load_books() {
-    const url = localhost+"books";
+    const url = localhost+"books/all-books";
     try {
         const response = await fetch(url,{
             method:"GET",
@@ -63,7 +63,7 @@ function add_book(book) {
     container.appendChild(bookDiv);
 }
 async function add_order(book) {
-    const url = localhost + "orders";
+    const url = localhost + "orders/new-order";
 
     try {
         const response = await fetch(url, {

@@ -148,7 +148,7 @@ async function author_form_btn_click() {
     let secondname  = document.getElementById("author-secondname").value;
     let firstname = document.getElementById("author-firstname").value;
     let birthdate = document.getElementById("author-birthdate").value;
-    const url = localhost+"authors";
+    const url = localhost+"authors/new-author";
     const author = {
         Secondname: secondname,
         Firstname: firstname,
@@ -173,7 +173,7 @@ async function author_form_btn_click() {
 
 }
 async function load_authors(){
-    const url = localhost+"authors";
+    const url = localhost+"authors/all-authors";
     try {
         const response = await fetch(url,{
             method:"GET",
@@ -217,7 +217,7 @@ async function edit_book() {
     };
 
     try {
-        const response = await fetch(localhost + `books/${book.Id}`, {
+        const response = await fetch(localhost + `books/by-bookid/${book.Id}`, {
             method: "PUT",
             headers: {
                 "Authorization": "Bearer " + token,
@@ -231,7 +231,7 @@ async function edit_book() {
         }
 
         load_books();
-        close_form();            // закрываем форму
+        close_form();            
 
     } catch (error) {
         console.error(error.message);
@@ -267,7 +267,7 @@ async function add_new_book() {
     };
 
     try {
-        const response = await fetch(localhost + "books", {
+        const response = await fetch(localhost + "books/new-book", {
             method: "POST",
             headers: {
                 "Authorization": "Bearer " + token,
